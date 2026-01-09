@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 shopt -s nullglob
-source ./filetypes.sh
+source ../Utils/filetypes.sh
 
 # fileTypes=('*.png' '*.jpg' '*.jpeg' '*.mp3' '*.py' '*.java' '*.mp4')
 
