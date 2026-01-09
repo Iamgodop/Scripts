@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### fileTypes dictionary contains all the file types for sorting
 
 fileTypes=(
