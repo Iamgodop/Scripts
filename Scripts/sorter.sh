@@ -13,7 +13,7 @@ for fileType in "${fileTypes[@]}"; do
 
   if [[ ${#files[@]} -ne 0 ]]; then
     printf "Found %s %s files. List them? [y/N]: " "${#files[@]}" "${fileTypeNames[$fileType]}"   ### TODO: small change: add color to the output and also print them in columns" ###
-    read choice
+    read -r choice
 
     if [[ $choice == [yY] ]]; then
       printf "%s\n" "${files[@]}"
@@ -22,19 +22,19 @@ for fileType in "${fileTypes[@]}"; do
     printf "Move the located files to their respective directory? [Y/n]: "
     read -r choice
     
-    if [[ choice == [nN] ]]; then
+    if [[ $choice == [nN] ]]; then
       printf "Would you like to move these to a custom directory? [y/N]: "
       read -r choice
-      if [[ choice == [yY] ]]; then
+      if [[ $choice == [yY] ]]; then
+        printf "Enter directory name: "
         read -r directory
-        mkdir -p $directory
-        mv $fileType $directory
+        mkdir -p "$directory"
+        mv "$fileType" "$directory"
       else
         printf "Aborting operation for %s files.\n" "${fileTypeNames[$fileType]}"
       fi 
     else
-      mkdir -p ${fileTypeDirs[$fileType]}
-      echo "mv ${files[@]} ${fileTypeDirs[$fileType]}"
+      mkdir -p "${fileTypeDirs[$fileType]}"
       mv "${files[@]}" "${fileTypeDirs[$fileType]}"
     fi
   fi
