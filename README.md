@@ -8,3 +8,4 @@ Sorter: Sort various types of files into a pre-configured or custom directory. N
 
 Work-In-Progress:
 - 
+Delete with recycle bin
