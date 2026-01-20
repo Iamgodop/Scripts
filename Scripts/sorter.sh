@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This line is not present in remote
+
 shopt -s nullglob
 # source ../Utils/filetypes.sh
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
